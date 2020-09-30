@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiurl: 'https://simplifyapilives.azurewebsites.net/api',
+  apiurl: 'https://simplifyapilive.azurewebsites.net/api',
   // apiurl: "https://mercatordcr.azurewebsites.net/api/",
   firebaseConfig: {
     apiKey: 'AIzaSyADgsBEOvH5ki87_CK3QOFSnASmqvubl5A',
