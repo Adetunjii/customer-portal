@@ -1,40 +1,55 @@
-<div class="flex justify-center items-center h-screen mx-auto">
-  <div class="container p-5">
-    <div class="flex items-center justify-center mx-auto mb-8">
-      <img
-        src="{{ customer.companyLogo }}"
-        alt=""
-        style="width: 100px; height: 100px"
-      />
-      <div>
-        <h3 class="text-lg font-bold">{{ customer.companyName }}</h3>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-      <div
-        class="max-w-sm rounded overflow-hidden shadow-lg m-3 text-center"
-        (click)="myWallet()"
-      >
-        <div class="p-4">
-          <div class="font-bold text-xl mb-2">My Wallet</div>
+<div class="bg-svg bg-cover">
+  <div class="flex justify-center items-center h-screen mx-auto">
+    <div class="container">
+      <div class="mb-16">
+        <div class="flex justify-center mx-auto mb-8">
+          <img
+            src="{{ customer.companyLogo }}"
+            alt=""
+            style="width: 100px; height: 100px"
+          />
+        </div>
+        <div class="block">
+          <h3
+            class="text-4xl font-bold font-nunito text-gray-800 md:text-gray-100 text-center"
+          >
+            {{ customer.companyName }}
+          </h3>
         </div>
       </div>
+      <div class="flex justify-center">
+        <div class="w-10/12">
+          <div class="grid md:grid-cols-2 w-full">
+            <div
+              class="max-w-sm rounded overflow-hidden shadow-lg m-3 text-center bg-gray-200 p-10 uppercase cursor-pointer"
+              (click)="myWallet()"
+            >
+              <div
+                class="font-bold font-custom text-gray-800 text-xl md:text-3xl mb-2"
+              >
+                My Wallet
+              </div>
+            </div>
 
-      <div
-        class="max-w-sm rounded overflow-hidden shadow-lg m-3 text-center"
-        (click)="invoice()"
-      >
-        <div class="p-4">
-          <div class="font-bold text-xl mb-2">My Invoices</div>
-        </div>
-      </div>
+            <div
+              class="max-w-sm rounded overflow-hidden shadow-lg m-3 bg-gray-200 text-center p-10 uppercase cursor-pointer"
+              (click)="invoice()"
+            >
+              <div
+                class="font-bold md:text-3xl mb-2 text-gray-800 text-xl font-custom"
+              >
+                My Invoices
+              </div>
+            </div>
 
-      <!-- <div class="max-w-sm rounded overflow-hidden shadow-lg m-3 text-center">
+            <!-- <div class="max-w-sm rounded overflow-hidden shadow-lg m-3 text-center">
       <div class="p-4">
         <div class="font-bold text-xl mb-2">My Wallet</div>
       </div>
     </div> -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

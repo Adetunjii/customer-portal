@@ -1,45 +1,78 @@
-<div class="flex justify-center items-center min-h-screen mx-auto">
-  <div
-    class="bg-white shadow-md rounded px-3 py-8 w-full md:w-32"
-    style="width: 75%"
-  >
-    <div class="md:flex-1">
-      <div>
-        <h1 class="text-3xl">LOGIN</h1>
-        <form style="padding-top: 50px">
-          <input
-            type="number"
-            aria-label="customer code"
-            name="customerID"
-            [(ngModel)]="customerID"
-            placeholder="Guest code"
-            required
-            class="pt-8 w-50"
-            style="
-              outline: 0;
-              border: 0;
-              width: 50%;
-              border-bottom: 2px solid pink;
-            "
-          />
-          <div class="my-3">
-            <button
-              class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded shadow"
-              (click)="login()"
-            >
-              Login
-            </button>
-          </div>
-        </form>
-      </div>
+<!-- <div class="bg-gray-900">
+  <div class="flex justify-center items-center min-h-screen mx-auto">
+    <div class="bg-white shadow-xl rounded px-3 py-8 w-full mx-16 md:mx-48">
+      <div class="md:flex-1">
+        <div>
+          <h1 class="text-3xl">LOGIN</h1>
+          <form style="padding-top: 50px">
+            <input
+              type="number"
+              aria-label="customer code"
+              name="customerID"
+              [(ngModel)]="customerID"
+              placeholder="Guest code"
+              required
+              class="pt-8 w-48 md:w-64 outline-none border-b-2"
+            />
+            <div class="my-3">
+              <button
+                class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded shadow"
+                (click)="login()"
+              >
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
 
-      <div class="flex flex-1 justify-end">
-        <img
-          src="../../../assets/login.svg"
-          alt="login"
-          class="w-64"
-          style=""
-        />
+        <div class="flex flex-1 justify-end">
+          <img src="../../../assets/login.svg" alt="login" class="w-64" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="bg-primary h-screen">
+  <div class="flex w-full justify-center">
+    <div class="w-3/5">
+      <div class="flex justify-center items-center h-screen">
+        <div
+          class="bg-white px-6 py-8 md:px-12 md:py-16 rounded shadow-2xl w-full"
+        >
+          <div class="grid md:grid-cols-2">
+            <div>
+              <div>
+                <h2>Simplify logo</h2>
+                <h3 class="text-2xl md:text-4xl font-custom font-bold">
+                  CUSTOMER PORTAL
+                </h3>
+              </div>
+              <div class="text-center">
+                <input
+                  type="text"
+                  class="border-b-2 border-gray-300 outline-none w-full mt-20"
+                  placeholder="Enter your customer code here"
+                  [(ngModel)]="customerID"
+                />
+                <button
+                  class="bg-primary text-white px-10 py-2 rounded mt-4 uppercase"
+                  (click)="login()"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+
+            <div class="flex justify-end">
+              <img
+                src="../../../assets/access_account.svg"
+                alt="login"
+                class="h-40 md:h-64 mt-6"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

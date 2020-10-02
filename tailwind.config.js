@@ -5,8 +5,15 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#5E6CEA",
+      },
+      fontFamily: {
+        custom: ["Nunito"],
+      },
+    },
   },
   variants: {},
   plugins: [],
-}
+};

@@ -1,22 +1,58 @@
-<div class="container p-5">
-  <div
-    class="max-w-sm rounded overflow-hidden shadow-md p-3 bg-teal-400 text-white"
-  >
-    <h1 class="text-2xl font-extrabold py-2">My Wallet</h1>
-    <p class="py-1 font-normal">{{ wallet.walletAccountNumber }}</p>
-    <p class="text-sm font-bold">{{ wallet.walletAccountName }}</p>
-    <!-- <p class="text-sm font-light">{{ wallet.email }}</p> -->
+<div class="md:flex justify-center items-center h-screen">
+  <div class="container p-5 font-custom">
+    <div class="flex lg:justify-end mb-12">
+      <div
+        class="max-w-sm rounded overflow-hidden shadow-md px-5 py-3 bg-primary text-white uppercase w-full"
+      >
+        <h1 class="text-2xl font-extrabold py-2">My Wallet</h1>
+        <p class="py-1 font-normal">{{ wallet.walletAccountNumber }}</p>
+        <p class="text-sm font-bold">{{ wallet.walletAccountName }}</p>
+        <!-- <p class="text-sm font-light">{{ wallet.email }}</p> -->
 
-    <div class="flex justify-end align-items-end text-4xl py-2">
-      <span>
-        <img
-          class="pt-3 pr-1"
-          src="../../../assets/wallet icon.png
+        <div class="flex justify-end align-items-end text-4xl py-2">
+          <span>
+            <img
+              class="pt-3 pr-1"
+              src="../../../assets/wallet icon.png
             "
-          alt="wallet"
-        />
-      </span>
-      ₦{{ wallet.balance }}
+              alt="wallet"
+            />
+          </span>
+          ₦{{ wallet.balance }}
+        </div>
+      </div>
+    </div>
+    <div class="my-10 pl-2">
+      <div>
+        <h4
+          class="text-semibold text-lg font-bold uppercase text-gray-700 flex"
+        >
+          how to fund your wallet
+          <span class="pl-2">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </span>
+        </h4>
+      </div>
+
+      <div class="mt-3">
+        <p class="text-gray-600 text-lg md:text-xl">
+          Fund your account by transfer using your bank's mobile banking or
+          internet banking, your wallet balance will be funded automatically.
+        </p>
+      </div>
     </div>
   </div>
 </div>

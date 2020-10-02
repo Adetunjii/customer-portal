@@ -11,7 +11,7 @@ import { InvoiceService } from 'src/app/services/invoice.service';
 export class InvoiceDetailsComponent implements OnInit {
   private companyID;
   private invoiceID;
-  details: any = {};
+  details: any;
   payments: any[] = [];
 
   constructor(
@@ -25,7 +25,7 @@ export class InvoiceDetailsComponent implements OnInit {
       .pipe(
         map((res) => {
           this.details = res;
-          this.payments = this.details.payments
+          this.payments = this.details.payments;
           console.log(this.details);
         })
       )

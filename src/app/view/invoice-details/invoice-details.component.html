@@ -1,128 +1,147 @@
-<div class="container" style="margin-top: 50px">
-  <h3 class="text-2xl font-bold text-teal-400 pl-8">INVOICES</h3>
-  <div class="flex flex-col px-1 md:px-8 py-8">
-    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-        <div
-          class="shadow-lg overflow-hidden border-b border-gray-200 sm:rounded-lg"
-        >
-          <table class="min-w-full divide-y divide-gray-200">
-            <thead>
-              <tr>
-                <th
-                  class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Invoice ID
-                </th>
-                <th
-                  class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Invoice Number
-                </th>
-                <th
-                  class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Receipt Number
-                </th>
-                <th
-                  class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Total Amount
-                </th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-              <tr>
-                <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="flex items-center">
-                    <div class="">
-                      <div class="text-sm leading-5 font-medium text-gray-900">
-                        {{ details.invoiceID }}
+<div class="flex flex-wrap justify-center w-screen">
+  <div class="container font-custom" style="margin-top: 50px">
+    <h3 class="text-2xl font-bold text-primary pl-8">INVOICES</h3>
+    <div class="flex flex-col px-1 md:px-8 py-8">
+      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div
+            class="shadow-lg overflow-hidden border-b border-gray-200 sm:rounded-lg"
+          >
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead>
+                <tr>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Name
+                  </th>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Price
+                  </th>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Quantity
+                  </th>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Total Amount
+                  </th>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Invoice No
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr *ngFor="let item of details.invoice.cart.items">
+                  <td class="px-6 py-4 whitespace-no-wrap">
+                    <div class="flex items-center">
+                      <div class="">
+                        <div
+                          class="text-sm leading-5 font-medium text-gray-900"
+                        >
+                          {{ item.name }}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </td>
-                <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">
-                    {{ details.invoiceNo }}
-                  </div>
-                  <!-- <div class="text-sm leading-5 text-gray-500">Optimization</div> -->
-                </td>
-                <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">
-                    {{ details.receiptNo }}
-                  </div>
-                </td>
-                <td
-                  class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"
-                >
-                  <div class="text-sm leading-5 text-gray-900">
-                    {{ details.totalAmount }}
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  </td>
+                  <td class="px-6 py-4 whitespace-no-wrap">
+                    <div class="text-sm leading-5 text-gray-900">
+                      {{ item.price }}
+                    </div>
+                    <!-- <div class="text-sm leading-5 text-gray-500">Optimization</div> -->
+                  </td>
+                  <td class="px-6 py-4 whitespace-no-wrap">
+                    <div class="text-sm leading-5 text-gray-900">
+                      {{ item.quantity }}
+                    </div>
+                  </td>
+                  <td
+                    class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"
+                  >
+                    <div class="text-sm leading-5 text-gray-900">
+                      {{ item.amount }}
+                    </div>
+                  </td>
+
+                  <td
+                    class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500"
+                  >
+                    <div class="text-sm leading-5 text-gray-900">
+                      {{ details.invoiceNo }}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container mt-4">
-  <h3 class="text-2xl font-bold text-teal-400 pl-8">PAYMENTS</h3>
+  <div class="container mt-16">
+    <h3 class="text-2xl font-bold text-primary pl-8">PAYMENTS</h3>
 
-  <div class="flex flex-col px-1 md:px-8 py-8">
-    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-      <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-        <div
-          class="shadow-lg overflow-hidden border-b border-gray-200 sm:rounded-lg"
-        >
-          <table class="min-w-full divide-y divide-gray-200">
-            <thead>
-              <tr>
-                <th
-                  class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Amount Paid
-                </th>
-                <th
-                  class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Date Paid
-                </th>
-                <th
-                  class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Method
-                </th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-              <tr *ngFor="let payment of payments">
-                <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="flex items-center">
-                    <div class="">
-                      <div class="text-sm leading-5 font-medium text-gray-900">
-                        {{ payment.amount }}
+    <div class="flex flex-col px-1 md:px-8 py-8">
+      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div
+            class="shadow-lg overflow-hidden border-b border-gray-200 sm:rounded-lg"
+          >
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead>
+                <tr>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Amount Paid
+                  </th>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Date Paid
+                  </th>
+                  <th
+                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Method
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr *ngFor="let payment of payments">
+                  <td class="px-6 py-4 whitespace-no-wrap">
+                    <div class="flex items-center">
+                      <div class="">
+                        <div
+                          class="text-sm leading-5 font-medium text-gray-900"
+                        >
+                          {{ payment.amount }}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </td>
-                <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">
-                    {{ payment.datePaid | date: "medium" }}
-                  </div>
-                  <!-- <div class="text-sm leading-5 text-gray-500">Optimization</div> -->
-                </td>
-                <td class="px-6 py-4 whitespace-no-wrap">
-                  <div class="text-sm leading-5 text-gray-900">
-                    {{ payment.method }}
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  </td>
+                  <td class="px-6 py-4 whitespace-no-wrap">
+                    <div class="text-sm leading-5 text-gray-900">
+                      {{ payment.datePaid | date: "medium" }}
+                    </div>
+                    <!-- <div class="text-sm leading-5 text-gray-500">Optimization</div> -->
+                  </td>
+                  <td class="px-6 py-4 whitespace-no-wrap">
+                    <div class="text-sm leading-5 text-gray-900">
+                      {{ payment.method }}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
